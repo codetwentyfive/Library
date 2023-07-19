@@ -53,12 +53,22 @@
 
                 </div>
 
-               
+
 
 
             </div>
             <div class="toolbar">
-                <button type="submit" class="add-btn">ADD</button>
+                <button type="submit" class="add-btn" id="new-book-btn">add new book</button>
+                <form id="new-book-form" style="display: none;">
+                    <label for="title">Title</label>
+                    <input type="text" placeholder="Title">
+                    <label for="author">Author</label>
+                    <input type="text" placeholder="Author">
+                    <label for="pages">Pages</label>
+                    <input type="number" placeholder="Pages">
+                    <label for="read">Read</label>
+                    <input type="checkbox">
+                </form>
             </div>
 
         </div>
