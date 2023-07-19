@@ -1,32 +1,43 @@
 let myLibrary = [];
 
-function Book() {
-    // the constructor...
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+function Book(title, author, pages, read) {
+  // the constructor...
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
+}
+
+function render() {
+  let libraryBook = document.querySelector()
 }
 
 function addBookToLibrary() {
-    event.preventDefault(); // Prevent form submission
-  
-    let title = document.getElementsByClassName("title").value;
-    let author = document.getElementsByClassName("author").value;
-    let pages = parseInt(document.getElementsByClassName("pages").value);
-    let read = document.getElementsByClassName("read").checked;
-  
-    let newBook = new Book(title, author, pages, read);
-    myLibrary.push(newBook);
-  
-    displayBooks();
-  }
 
-  document.getElementsByClassName("add-btn").addEventListener("click", addBookToLibrary);
+  let title = document.querySelector("#title").value;
+  let author = document.querySelector("#author").value;
+  let pages = document.querySelector("#pages").value;
+  let read = document.querySelector("#read").checker;
 
+  let newBook = new Book(title, author, pages, read);
 
-function displayBooks(){
-    let bookDisplay=document.getElementsByClassName("book");
-    bookDisplay.innerHtml="";
+  myLibrary.push(newBook);
+  render():
+
 
 }
+
+
+
+let newBookBtn = document.querySelector("#new-book-btn");
+
+newBookBtn.addEventListener("click", function () {
+  let newBookForm = document.querySelector("#new-book-form");
+  newBookForm.style.display = "block";
+
+})
+
+document.querySelector("#new-book-form").addEventListener("submit", function () {
+  event.preventDefault();
+  addBookToLibrary();
+})
