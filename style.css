@@ -4,6 +4,7 @@
     --accent: #37cdbe;
     --neutral: #3d4451;
     --base-100: #ffffff;
+    background-color: #a991f7;
 
 
 }
@@ -90,6 +91,15 @@ button {
     border-radius: 20px 0;
     background-color: #a991f7;
 
+}
+.cardBottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1em;
+}
+.removeBtn,.toggleRead{
+    border-radius: 20px
 }
 
 .form-container {
