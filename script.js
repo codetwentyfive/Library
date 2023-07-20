@@ -8,6 +8,15 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+}
+
+function toggleRead(index) {
+  myLibrary[index].toggleRead();
+  render()
+}
+
 function render() {
   let bookDisplay = document.querySelector(".bookDisplay");
   bookDisplay.innerHTML = ""; // empties the html 
@@ -16,10 +25,13 @@ function render() {
     let bookEl = document.createElement("div");
     bookEl.innerHTML = `<div class="book">
                     <h2 class="title">${book.title}</h2>
-                    <p class="author">By: <${book.author}/p>
-                    <p class="pages">Pages:${book.pages}304</p>
-                    <p class "read-status">${book.read ? "Read" : "Not read yet"}</p>
-                    <button class="removeBtn" onclick="removeBook(${i})">Remove</button>
+                    <p class="author">By: ${book.author}</p>
+                    <p class="pages">Pages: ${book.pages}</p>
+                    <p class="read-status"> ${book.read ? "Read" : "Not read yet"}</p>
+                    <div class="cardBottom">
+                        <button class="removeBtn" onclick="removeBook(${i})">Remove</button>
+                        <button class="toggleRead" onclick="toggleRead(${i})">Toogle Read</button>
+                    </div>
                     </div>`;
     bookDisplay.appendChild(bookEl);
   }
@@ -59,4 +71,5 @@ newBookBtn.addEventListener("click", function () {
 document.querySelector("#new-book-form").addEventListener("submit", function () {
   event.preventDefault();
   addBookToLibrary();
+  document.querySelector("#new-book-form").style.display="none";
 })
