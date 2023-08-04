@@ -1,6 +1,19 @@
 let myLibrary = [];
+//Book Class
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 
-function Book(title, author, pages, read) {
+  toggleRead() {
+    this.read = !this.read
+  }
+
+}
+/*function Book(title, author, pages, read) {
   // the constructor...
   this.title = title;
   this.author = author;
@@ -11,7 +24,7 @@ function Book(title, author, pages, read) {
 Book.prototype.toggleRead = function () {
   this.read = !this.read;
 }
-
+*/
 function toggleRead(index) {
   myLibrary[index].toggleRead();
   render()
@@ -71,5 +84,5 @@ newBookBtn.addEventListener("click", function () {
 document.querySelector("#new-book-form").addEventListener("submit", function () {
   event.preventDefault();
   addBookToLibrary();
-  document.querySelector("#new-book-form").style.display="none";
+  document.querySelector("#new-book-form").style.display = "none";
 })
